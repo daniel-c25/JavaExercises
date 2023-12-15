@@ -1,0 +1,41 @@
+//studio del codice
+class Main {
+	public static void removeDuplicates(int[] array) {
+        int size = array.length;
+        int doubles = 0;
+        for(int i = 0; i < size; i++) {
+            for(int j = i + 1; j < size; j++) {
+                if(array[i]==array[j]) {
+                    doubles++;
+                    break;
+                }
+            }
+        }
+
+        int[] temp = new int[array.length - doubles];
+        int counter = 0;
+ 
+        for(int i=0; i<size; i++) {
+            boolean found = false;
+            for(int j = 0; j < temp.length; j++) {
+                if(array[i] == temp[j]) {
+                    found = true;
+                    break;
+                }
+            }
+            if(!found){
+                temp[counter]=array[i];
+                counter++;
+            }
+        }
+
+        for(int i = 0; i < temp.length; i++) {
+            System.out.println(temp[i]);
+        }
+	}
+	
+	public static void main(String[] args) {
+		int[] arr = {1,9,4,2,7,9,3,8,4,12,6,9,4,2,3,8,9,54,3,67,89,6,4,1};
+		removeDuplicates(arr);
+	}
+}

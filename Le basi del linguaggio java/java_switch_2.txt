@@ -1,0 +1,14 @@
+public class Main {
+	public static String isSign(char sign) {
+		return switch (sign){
+        case '+' -> "addition";
+        case '-' -> "subtraction";
+        case '*' -> "multiplication";
+        case '/' -> "division";
+        default -> "Error";
+		};
+	}
+    public static void main(String args[]) {
+    	System.out.println(isSign('+'));
+    }
+}

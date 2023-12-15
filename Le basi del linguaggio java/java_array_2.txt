@@ -1,0 +1,17 @@
+class Main {
+	public static int countAs() {
+		char[] characters = {'a', '9', '4', '/', 'd', 'l', 'a'};
+		int aCounter = 0;
+		for(int i = 0; i < characters.length; i++) {
+			if(characters[i] == 'a') {
+				System.out.println("'a' in posizione " + i);
+				aCounter++;
+			}
+		}
+		return aCounter;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("\nHo trovato " + countAs() + " 'a' nell'array");
+	}
+}

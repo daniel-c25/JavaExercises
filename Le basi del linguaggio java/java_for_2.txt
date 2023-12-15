@@ -1,0 +1,14 @@
+class Main {
+	public static String reversesByN(int number, int limit) {
+		String numbers = "";
+		for(int i = limit - 1; i >= 0; i--) {
+			numbers = numbers + " " + Integer
+					.toString(number - (limit - (i+1))); 
+		}
+		return numbers;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(reversesByN(19, 6));
+	}
+}

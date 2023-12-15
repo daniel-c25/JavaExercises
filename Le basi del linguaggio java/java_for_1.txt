@@ -1,0 +1,16 @@
+class Main {
+	public static int[] arithmeticTable(int number) {
+		int table[] = new int[10]; 
+		for(int i = 0; i < 10; i++) {
+			table[i] = number * (i+1);
+		}
+		return table;
+	}
+	
+	public static void main(String[] args) {
+		int table[] = arithmeticTable(5);
+		for (int i = 0; i < 10; i++) {
+			System.out.println(table[i]);
+		}
+	}
+}
