@@ -1,0 +1,65 @@
+package main;
+
+public class Main{
+	
+	public static String repeatSymbol(char symbol, int times) {
+		String repeatedSymbols = "";
+		String stringSymbol = Character.toString(symbol);
+		for (int i = 0; i < times; i++) {
+			repeatedSymbols += stringSymbol;
+		}
+		return repeatedSymbols;
+	}
+	
+	public static String toRomanNumbers(int decimalNumber) {
+		String romanNumber = "";
+		
+		if (decimalNumber > 0) {	
+			char[][] romanSymbols = {	{'M','C','X','I'},
+										{'M','D','L','V'}};
+			String number = String.valueOf(decimalNumber);
+			
+			int digit = 0;
+			int multiplier;
+			int symbolRow;
+			
+			for(int i = number.length(); i > 0; i--) {
+				digit = Character.getNumericValue(number.charAt(number.length()-i));
+				symbolRow = digit/5;
+				multiplier = switch (symbolRow) {
+				case 0 -> digit%5;
+				default -> 1;
+				};
+				if (symbolRow == 1) {
+					//if digit >= 5
+					if (multiplier == 4) {
+						//if digit == 9
+						
+					}else {
+						romanNumber += repeatSymbol(romanSymbols[symbolRow]
+																[(romanSymbols[0].length)-(i)],
+																multiplier)
+								+ repeatSymbol(romanSymbols[symbolRow-1]
+															[(romanSymbols[0].length-1)-(i-1)],
+															digit-5);						
+					}
+				}else{
+					//if digit < 5
+					if (multiplier == 4) {
+						//if digit == 4
+						
+					}else {
+						romanNumber += repeatSymbol(romanSymbols[symbolRow]
+																[(romanSymbols[0].length-1)-(i-1)],
+																multiplier);						
+					}
+				}
+			}
+		}
+		return romanNumber;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(toRomanNumbers(9));
+	}
+}
