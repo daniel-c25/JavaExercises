@@ -4,10 +4,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Animale animale = new Animale("Verso di animale");
-		Gatto gatto = new Gatto("Miao!");
-		
-		animale.faiIlVerso();
+		Gatto gatto = new Gatto();
 		gatto.faiIlVerso();
 	}
 

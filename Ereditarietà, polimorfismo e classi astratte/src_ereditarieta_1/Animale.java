@@ -1,23 +1,10 @@
 package src_ereditarieta_1;
 
-public class Animale {
-
-	private String verso;
-
-	public Animale(String verso) {
-		this.verso = verso;
-	}
-
-	public String getVerso() {
-		return verso;
-	}
-
-	public void setVerso(String verso) {
-		this.verso = verso;
-	}
+public interface Animale {
 	
-	public void faiIlVerso() {
-		System.out.println(this.verso);
-	}
+	//dato per scontato che non tutti gli animali hanno un verso...
+	//altrimenti classe astratta con attributo privato
+	
+	public abstract void faiIlVerso();
 	
 }

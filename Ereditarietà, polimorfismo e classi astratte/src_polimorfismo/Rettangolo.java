@@ -1,17 +1,28 @@
 package src_polimorfismo;
 
-public class Rettangolo extends Forma{
+public class Rettangolo implements Forma{
 
+	private double altezza;
+	private double base;
+	
 	public Rettangolo(double altezza, double base) {
-		super(altezza, base);
+		this.altezza = altezza;
+		this.base = base;
 	}
 	
 	public Rettangolo() {
 		
 	}
 	
-	@Override
-	public void calcolaArea() {
-		super.setArea(super.getAltezza() * super.getBase());
+	public double getAltezza() {
+		return altezza;
+	}
+	
+	public double getBase() {
+		return base;
+	}
+	
+	public Double calcolaArea() {
+		return this.getAltezza() * this.getBase();
 	}
 }
